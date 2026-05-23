@@ -18,7 +18,7 @@ class OpenRouter_LLM:
         初始化客户端。优先使用传入参数，如果未提供，则从环境变量加载。
         """
         self.model = model or os.getenv("LLM_MODEL_ID")
-        api_key = api_key or os.getenv("LLM_API_KEY")
+        api_key = api_key or os.getenv("LLM_API_KEY_OPENROUTER")
         base_url = base_url or os.getenv("LLM_BASE_URL")
         timeout = timeout or int(os.getenv("LLM_TIMEOUT", 60))
         if not all([self.model, api_key, base_url]):
